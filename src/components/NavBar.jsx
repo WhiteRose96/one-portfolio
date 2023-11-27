@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom"
 
-const NavBar = () => {
+function NavBar () {
 
     const [nav, setNav] = useState(false);
 
@@ -16,7 +17,7 @@ const NavBar = () => {
         },
         {
             id: 3,
-            link: 'Personal Projects',
+            link: 'Projects',
         },
         {
             id: 4,
@@ -41,7 +42,8 @@ const NavBar = () => {
                     className="px-4 cursor-pointer capitalize 
                     font-medium text-gray-300 hover:scale-105 duration-200"
                 >
-                    {link}
+                    <Link to={link}>
+                        {link} </Link>
                 </li>
             ))}
         </ul>
@@ -59,7 +61,8 @@ const NavBar = () => {
                     key={id} 
                     className="px-4 cursor-pointer capitalize py-6 text-4xl"
                 >
-                    {link}
+                    <Link to={link}>
+                        {link} </Link>
                 </li>
             ))}
             </ul>
