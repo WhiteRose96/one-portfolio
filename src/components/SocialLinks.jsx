@@ -44,7 +44,7 @@ const SocialLinks = () => {
                 Mail <HiOutlineMail size={30} />
                 </>
             ),
-            href: 'mailto:zach.proch@gmail.com',
+            href: 'mailto:zachary.proch.iplaw@gmail.com',
         },
 
         {
@@ -54,9 +54,9 @@ const SocialLinks = () => {
                 Resume <BsFillPersonLinesFill size={30} />
                 </>
             ),
-            href: 'Zachary_T_Proch_Resume.pdf',
+            href: 'Zachary_T_Proch_WebResume.pdf',
             style: 'rounded-br-md',
-            download: true,
+            download: false,
         },
     ];
 
