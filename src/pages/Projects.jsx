@@ -1,8 +1,14 @@
-import React from 'react'
+import React from "react";
+import useDocumentTitle from "../components/useDocumentTitle";
 
 function Projects() {
+
+  useDocumentTitle("Projects | Zachary Proch")
+
   return (
-    <div>Projects</div>
+    <div name="projects" className="h-screen w-full bg-[#121212]">
+      Projects
+    </div>
   )
 }
 

@@ -1,28 +1,46 @@
-import React from 'react'
+import React from "react";
 import image from "../assets/image.png";
+import { useIsVisible } from "../components/useIsVisible";
+import { useRef } from "react";
+import useDocumentTitle from "../components/useDocumentTitle";
 
 function Home() {
+
+    useDocumentTitle("Home | Zachary Proch")
+
+    const ref1 = useRef();
+    const isVisible1 = useIsVisible(ref1);
+
   return (
+    
     <div 
         name="home" className="h-screen w-full bg-[#121212]">
-        <div className="max-w-screen-xl mx-auto flex flex-col items-center justify-around h-full
-        px-4 md:flex-row">
-            
-            <div className="flex flex-col justify-center">
-                <img src={image} alt="my headshot" className="rounded-2xl mx-auto w-2/3 md:w-full"/>
-            </div>
+        <div className="max-w-screen-lg mx-auto flex flex-col w-full h-full justify-center">
 
-            <div className="flex flex-col justify-center h-full">
-                <h2 className="text-6xl text-white">Hello, I'm<span className="font-semibold text-6xl text-[#FF00FF]"> <br /> Zachary Proch</span>.</h2>
-                    <p className="text-4xl font-thin text-gray-300 py-4 max-w-md">
-                        Intellectual Property Attorney.
-                        Engineer. Coffee Enthusiast.
-                    </p>
+            <div className="flex items-center p-5">
+
+                <img src={image} alt="professional headshot" className="float-left rounded-full w-5/12" />
+
+                <p className=""> 
+                <span className="text-white text-4xl md:text-6xl"> Hello, I'm </span>
+
+                <br/>
+
+                <span ref={ref1} className={`transition-opacity ease-in delay-200 duration-1000
+          ${isVisible1 ? "opacity-100" : "opacity-0"} font-semibold text-4xl md:text-6xl text-purple-600`}> Zachary Proch. </span>
+
+                <br/>
+                
+                <span className="text-gray-300 text-2xl font-thin md:text-4xl"> Intellectual Property Attorney. Engineer. Coffee Enthusiast. </span>
+                </p>
+
             </div>
             
         </div>
+
     </div>
+
   );
-};
+}
 
 export default Home;
